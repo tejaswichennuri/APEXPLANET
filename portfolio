@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tejaswi Chennuri | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: #f8fafc;
+  color: #334155;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+nav {
+  background: #0f172a;
+  padding: 16px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: #6366f1;
+  font-weight: 600;
+  padding-left: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 24px;
+}
+
+nav ul li a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+nav ul li a:hover {
+  color: #6366f1;
+}
+
+/* HERO */
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  color: #f8fafc;
+}
+
+.hero h1 {
+  font-size: 46px;
+  font-weight: 600;
+}
+
+.hero h3 {
+  color: #c7d2fe;
+  margin: 10px 0;
+}
+
+.hero p {
+  max-width: 500px;
+  color: #cbd5f5;
+}
+
+.profile-img {
+  width: 240px;
+  border-radius: 50%;
+  border: 4px solid #6366f1;
+}
+/* SOCIAL ICONS – IMPROVED VISIBILITY */
+.socials {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.socials a {
+  font-size: 34px;              /* Increased size */
+  margin: 0 14px;
+  color:white;               /* Visible blue for light mode */
+  transition: transform 0.3s, color 0.3s;
+}
+
+/* Hover effect */
+.socials a:hover {
+  transform: translateY(-4px);
+  color:white;
+  size: 30px;
+}
+
+/* DARK MODE FIX */
+body.dark .socials a {
+  color: #e5e7eb;               /* Light color for dark bg */
+}
+
+body.dark .socials a:hover {
+  color: white;               /* Soft accent on hover */
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 12px 26px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+/* SECTIONS */
+.section {
+  padding: 90px 140px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 28px;
+  color: #0f172a;
+}
+
+/* LIGHT / DARK */
+.light {
+  background: #f8fafc;
+}
+
+.dark {
+  background: #f1f5f9;
+}
+
+
+/* EXPERIENCE & LEARNING – BLUE BACKGROUND */
+
+ /* EXPERIENCE SECTION BACKGROUND */
+.experience-bg {
+  background-color: #f1f5f9;   /* Soft professional light */
+  padding: 80px 20px;
+}
+
+/* Timeline cards */
+.timeline {
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+
+.timeline-item {
+  background: #ffffff;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Dark mode support */
+body.dark .experience-bg {
+  background-color: #0f172a;   /* Dark slate */
+}
+
+body.dark .timeline-item {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+
+/* SKILLS */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.skills-container span {
+  background: #e0e7ff;
+  color: #1e3a8a;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(15,23,42,0.08);
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card img {
+  width: 100%;
+}
+
+.project-card h3 {
+  padding: 12px 18px 0;
+  color: #0f172a;
+}
+
+.project-card p {
+  padding: 6px 18px 14px;
+  font-size: 14px;
+}
+
+.project-card a {
+  padding: 0 18px 18px;
+  display: inline-block;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+/* CERTIFICATES */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+  
+}
+
+.cert-grid img {
+  width: 75%;
+  max-width: 60px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 12px;
+}
+
+/* CONTACT */
+form {
+  max-width: 480px;
+  margin: auto;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+
+
+/* FOOTER */
+footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 22px;
+  font-size: 14px;
+}
+
+/* DARK MODE */
+body.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .light {
+  background: #020617;
+}
+
+body.dark .dark {
+  background: #020617;
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BACK TO TOP */
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: none;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section {
+    padding: 60px 30px;
+  }
+}
+</style>
+    
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h2 class="logo">Tejaswi Chennuri</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Tejaswi Chennuri</h1>
+    <h3>Computer Science Student</h3>
+    <p>Building intelligent systems and clean web applications.</p>
+    <a href="updatedresume.pdf" class="btn" download>Download Resume</a>
+  </div>
+  <img src="tejupic.jpeg" class="profile-img" alt="Profile">
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section light">
+  <h2><i class="fas fa-user"></i> About Me</h2>
+  <p>
+   Computer Science student with skills in Python, web development. Passionate about applying technical
+knowledge to real-world projects, learning new technologies, and contributing effectively to team success.
+  </p>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section dark">
+  <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>B.Tech – Computer Science Engineering</h3>
+      <span>2022 – 2026</span>
+      <p>Sridevi Women's Engineering College</p>
+    </div>
+  </div>
+</section>
+<!-- EXPERIENCE -->
+<section id="experience" class="section light">
+  <h2><i class="fas fa-briefcase"></i> Experience & Learning</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>Machine Learning Academic Project</h3>
+      <span>2025</span>
+      <p>
+        Developed a Skin Disease Detection System using CNN models.
+        Worked on image preprocessing, model training, testing, and evaluation.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Web Development Projects</h3>
+      <span>2025</span>
+      <p>
+        Designed and developed responsive websites including a Coffee Shop
+        webpage and personal portfolio using HTML, CSS, and JavaScript.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="section dark">
+  <h2><i class="fas fa-code"></i> Skills</h2>
+
+  <div class="skills-container">
+    <span>Python</span>
+
+    
+    <span>HTML</span>
+    <span>CSS</span>
+    
+    
+    <span>Git & GitHub</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section light">
+  <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <img src="skinproject.jpeg" alt="">
+      <h3>Skin Disease Detection System</h3>
+      <p>ML-based system to classify skin diseases using CNN.</p>
+      <a href="https://github.com/tejaswichennuri" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <img src="portfolio.jpg" alt="">
+      <h3>Portfolio Website</h3>
+      <p>Responsive portfolio built with HTML, CSS, JS.</p>
+      <a href="#">Live Demo</a>
+    </div>
+
+  </div>
+</section>
+<!-- CERTIFICATES -->
+<section id="certificates" class="section dark">
+  <h2><i class="fas fa-certificate"></i> Certifications</h2>
+
+  <div class="cert-grid">
+    <img src="sqlcerify.jpg" alt="SQL Certification">
+    <img src="pythoncertify.jpg" alt="Machine Learning Certification">
+  </div>
+</section>
+s
+
+<!-- CONTACT -->
+<section id="contact" class="section light">
+  <h2><i class="fas fa-envelope"></i> Contact</h2>
+
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Message"></textarea>
+    <button class="btn">Send</button>
+  </form>
+
+  <div class="socials">
+    <a href="https://github.com/tejaswichennuri" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+</section>
+<script>
+// Dark Mode
+document.getElementById("modeToggle").onclick = () =>
+  document.body.classList.toggle("dark");
+
+// Scroll reveal
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+});
+
+// Back to top
+const topBtn = document.getElementById("topBtn");
+window.onscroll = () => {
+  topBtn.style.display = window.scrollY > 400 ? "block" : "none";
+};
+topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+</script>
+
+
+<footer>
+  <p>© 2025 Tejaswi Chennuri</p>
+</footer>
+
+</body>
+</html>
